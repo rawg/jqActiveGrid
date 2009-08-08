@@ -29,10 +29,10 @@
 (function ($) {
     $.fn.activeGrid = function (opts) {
         var options = $.extend({}, $.fn.activeGrid.defaults, opts);
-        var $grid = this;
         
         this.each(function () {
-            $(this).find(':input:last').each(function (pos) {
+            var $grid = $(this);
+            $grid.find(':input:last').each(function (pos) {
                 $(this).blur(function () {
                     // Find the parent form 
                     var $form = $grid.children('form:eq(0)');
